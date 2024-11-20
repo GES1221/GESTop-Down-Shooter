@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://caonel7l0yubi"]
+
+[ext_resource type="PackedScene" uid="uid://b37s51dubv47t" path="res://player.tscn" id="1_55tdj"]
+[ext_resource type="PackedScene" uid="uid://c4syu8uh8wdrc" path="res://zombie.tscn" id="2_yh3at"]
+[ext_resource type="Texture2D" uid="uid://83onvak5hx0n" path="res://PNG/Thin/Default (256px)/pattern_0002.png" id="5_pte53"]
+
+[sub_resource type="TileSet" id="TileSet_1t84c"]
+
+[node name="world" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -39.0
+offset_top = -42.0
+offset_right = 1189.0
+offset_bottom = 693.0
+color = Color(0.160784, 0.227451, 0.392157, 0.627451)
+
+[node name="Pattern0002" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.254902)
+texture_repeat = 2
+position = Vector2(584, 320)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_pte53")
+region_enabled = true
+region_rect = Rect2(0, 0, 6000, 4000)
+
+[node name="Player" parent="." instance=ExtResource("1_55tdj")]
+position = Vector2(568, 328)
+
+[node name="Zombie" parent="." instance=ExtResource("2_yh3at")]
+position = Vector2(872, 120)
+
+[node name="Zombie2" parent="." instance=ExtResource("2_yh3at")]
+position = Vector2(224, 312)
+
+[node name="Zombie3" parent="." instance=ExtResource("2_yh3at")]
+position = Vector2(896, 568)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_1t84c")
+format = 2
